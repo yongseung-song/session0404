@@ -8,7 +8,7 @@ type Action = {
 };
 
 export type ProfileState = {
-  id: string | null;
+  id: number | null;
   nickname: string | null;
   description: string | null;
   avatarImgUrl: string | null;
@@ -45,15 +45,15 @@ function profileReducer(prevState = initialState, action: Action) {
 }
 
 export const setProfile = (profile: ProfileState) => ({
-  action: SET_PROFILE,
+  type: SET_PROFILE,
   payload: profile,
 });
 export const updateNickname = (nickname: string) => ({
-  action: UPDATE_NICKNAME,
+  type: UPDATE_NICKNAME,
   payload: nickname,
 });
 export const updateDescription = (description: string) => ({
-  action: UPDATE_DESCRIPTION,
+  type: UPDATE_DESCRIPTION,
   payload: description,
 });
 
